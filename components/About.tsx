@@ -1,35 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { Code2, Globe, Zap } from 'lucide-react'
 import { PERSONAL_INFO, STATS } from '@/data'
-import { cn } from '@/lib/utils'
-
-gsap.registerPlugin(ScrollTrigger)
 
 export function About() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const cards = containerRef.current.querySelectorAll('.bento-card')
-    cards.forEach((card) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-      })
-    })
-  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,17 +47,16 @@ export function About() {
 
         {/* Bento Grid */}
         <motion.div
-          ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-max"
         >
           {/* Large Intro Card */}
           <motion.div
             variants={itemVariants}
-            className="bento-card md:col-span-2 md:row-span-2"
+            className=" md:col-span-2 md:row-span-2"
           >
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 md:p-10 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
               <div className="flex items-start gap-6 h-full">
@@ -105,7 +79,7 @@ export function About() {
           {/* Globe Card */}
           <motion.div
             variants={itemVariants}
-            className="bento-card"
+            className=""
           >
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover flex flex-col items-center justify-center gap-4 group">
               <Globe className="w-16 h-16 text-cyan-500 group-hover:scale-110 group-hover:text-cyan-400 transition-all duration-300" />
@@ -121,7 +95,7 @@ export function About() {
           {/* Tech Stack Card */}
           <motion.div
             variants={itemVariants}
-            className="bento-card"
+            className=""
           >
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
               <h4 className="font-semibold mb-4 flex items-center gap-2 group-hover:text-cyan-500 transition-colors">
@@ -140,7 +114,7 @@ export function About() {
           {/* Stats Card */}
           <motion.div
             variants={itemVariants}
-            className="bento-card md:col-span-2"
+            className=" md:col-span-2"
           >
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover">
               <h4 className="font-semibold mb-6">By The Numbers</h4>
@@ -162,7 +136,7 @@ export function About() {
           {/* Currently Building */}
           <motion.div
             variants={itemVariants}
-            className="bento-card"
+            className=""
           >
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
               <h4 className="font-semibold mb-3 group-hover:text-cyan-500 transition-colors">
@@ -177,7 +151,7 @@ export function About() {
           {/* CTA Card */}
           <motion.div
             variants={itemVariants}
-            className="bento-card"
+            className=""
           >
             <motion.a
               href={`mailto:${PERSONAL_INFO.email}`}

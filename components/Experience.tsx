@@ -1,34 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { CheckCircle2 } from 'lucide-react'
 import { EXPERIENCE } from '@/data'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export function Experience() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const items = containerRef.current.querySelectorAll('.experience-item')
-    items.forEach((item) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        x: -30,
-        duration: 0.8,
-      })
-    })
-  }, [])
 
   return (
     <section id="experience" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
@@ -50,7 +26,7 @@ export function Experience() {
         </motion.div>
 
         {/* Timeline */}
-        <div ref={containerRef} className="relative">
+        <div className="relative">
           {/* Vertical line */}
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500 opacity-30 rounded-full" />
 

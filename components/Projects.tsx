@@ -1,34 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { Github, ExternalLink } from 'lucide-react'
 import { PROJECTS } from '@/data'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export function Projects() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const cards = containerRef.current.querySelectorAll('.project-card')
-    cards.forEach((card) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-      })
-    })
-  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -71,18 +47,17 @@ export function Projects() {
 
         {/* Projects Grid */}
         <motion.div
-          ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {PROJECTS.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="project-card group"
+              className="group"
             >
               <div className="relative bg-light-card dark:bg-dark-card rounded-xl overflow-hidden border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 h-full flex flex-col hover:shadow-card-hover">
                 {/* Project Header with Gradient */}

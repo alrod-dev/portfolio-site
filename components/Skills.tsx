@@ -1,33 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { SKILLS } from '@/data'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export function Skills() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const groups = containerRef.current.querySelectorAll('.skill-group')
-    groups.forEach((group) => {
-      gsap.from(group, {
-        scrollTrigger: {
-          trigger: group,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-      })
-    })
-  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,11 +46,10 @@ export function Skills() {
 
         {/* Skills Grid */}
         <motion.div
-          ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {Object.entries(SKILLS).map(([category, skills]) => (
