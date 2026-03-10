@@ -2,22 +2,13 @@
 
 import { CheckCircle2 } from 'lucide-react'
 import { EXPERIENCE } from '@/data'
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Experience() {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
-  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation()
-
   return (
     <section id="experience" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Experience
           </h2>
@@ -27,9 +18,7 @@ export function Experience() {
         </div>
 
         {/* Timeline */}
-        <div ref={contentRef} className={`relative transition-all duration-700 ${
-          contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-        }`}>
+        <div className="relative">
           {/* Vertical line */}
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500 opacity-30 rounded-full" />
 
@@ -39,9 +28,6 @@ export function Experience() {
               <div
                 key={exp.id}
                 className="experience-item"
-                style={{
-                  transitionDelay: `${index * 100}ms`,
-                }}
               >
                 <div className={`flex gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Timeline dot */}

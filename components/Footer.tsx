@@ -2,20 +2,13 @@
 
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { PERSONAL_INFO } from '@/data'
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-  const { ref: footerRef, isVisible: footerVisible } = useScrollAnimation()
 
   return (
     <footer className="relative w-full border-t border-gray-200 dark:border-cyan-500/20 bg-light-card dark:bg-navy-900">
-      <div
-        ref={footerRef}
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 transition-all duration-700 ${
-          footerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-        }`}
-      >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Brand */}
           <div>

@@ -1,23 +1,13 @@
 'use client'
 
 import { SKILLS } from '@/data'
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Skills() {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation()
-  const { ref: footerRef, isVisible: footerVisible } = useScrollAnimation()
-
   return (
     <section id="skills" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Skills & Technologies
           </h2>
@@ -27,12 +17,7 @@ export function Skills() {
         </div>
 
         {/* Skills Grid */}
-        <div
-          ref={gridRef}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 transition-all duration-700 ${
-            gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {Object.entries(SKILLS).map(([category, skills]) => (
             <div
               key={category}
@@ -63,12 +48,7 @@ export function Skills() {
         </div>
 
         {/* Additional Info */}
-        <div
-          ref={footerRef}
-          className={`mt-16 p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 rounded-xl border border-cyan-500/30 dark:border-cyan-500/40 transition-all duration-700 ${
-            footerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="mt-16 p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 rounded-xl border border-cyan-500/30 dark:border-cyan-500/40">
           <p className="text-center text-gray-700 dark:text-gray-300">
             Always learning new technologies and staying up-to-date with industry trends.
             Open to exploring emerging frameworks and tools that solve real-world problems.

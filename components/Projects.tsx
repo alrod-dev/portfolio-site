@@ -2,22 +2,13 @@
 
 import { Github, ExternalLink } from 'lucide-react'
 import { PROJECTS } from '@/data'
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Projects() {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation()
-
   return (
     <section id="projects" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured Projects
           </h2>
@@ -27,12 +18,7 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div
-          ref={gridRef}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
-            gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project) => (
             <div
               key={project.id}

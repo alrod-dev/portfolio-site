@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { Mail, Github, Linkedin, Copy, Check } from 'lucide-react'
 import { PERSONAL_INFO } from '@/data'
 import { copyToClipboard } from '@/lib/utils'
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -14,9 +13,6 @@ export function Contact() {
   })
   const [copied, setCopied] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation()
-  const { ref: formRef, isVisible: formVisible } = useScrollAnimation()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -48,12 +44,7 @@ export function Contact() {
     <section id="contact" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Let&apos;s Work Together
           </h2>
@@ -63,12 +54,7 @@ export function Contact() {
         </div>
 
         {/* Contact Methods */}
-        <div
-          ref={cardsRef}
-          className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-all duration-700 ${
-            cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* Email */}
           <div className="group">
             <button
@@ -150,12 +136,7 @@ export function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div
-          ref={formRef}
-          className={`bg-light-card dark:bg-dark-card rounded-xl p-8 md:p-10 border border-gray-200 dark:border-cyan-500/20 transition-all duration-700 ${
-            formVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="bg-light-card dark:bg-dark-card rounded-xl p-8 md:p-10 border border-gray-200 dark:border-cyan-500/20">
           <h3 className="text-2xl font-bold mb-6">Send me a message</h3>
 
           <form onSubmit={handleSubmit} className="space-y-6">

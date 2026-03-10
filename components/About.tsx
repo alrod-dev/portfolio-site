@@ -2,22 +2,13 @@
 
 import { Code2, Globe, Zap } from 'lucide-react'
 import { PERSONAL_INFO, STATS } from '@/data'
-import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function About() {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation()
-
   return (
     <section id="about" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About Me
           </h2>
@@ -27,12 +18,7 @@ export function About() {
         </div>
 
         {/* Bento Grid */}
-        <div
-          ref={gridRef}
-          className={`grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-max transition-all duration-700 ${
-            gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-          }`}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-max">
           {/* Large Intro Card */}
           <div className="md:col-span-2 md:row-span-2">
             <div className="relative bg-light-card dark:bg-dark-card rounded-2xl p-8 md:p-10 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group overflow-hidden">
