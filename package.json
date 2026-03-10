@@ -1,0 +1,40 @@
+{
+  "name": "alfredo-wiesner-portfolio",
+  "version": "1.0.0",
+  "description": "Production-ready portfolio website for Alfredo Wiesner",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.4",
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/node": "^20.10.6",
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "framer-motion": "^10.16.16",
+    "gsap": "^3.12.2",
+    "three": "^r161",
+    "@react-three/fiber": "^8.15.12",
+    "@react-three/drei": "^9.88.16",
+    "next-themes": "^0.2.1",
+    "lucide-react": "^0.292.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.1",
+    "react-globe.gl": "^2.26.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-next": "^14.0.4"
+  }
+}

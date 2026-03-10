@@ -1,0 +1,232 @@
+export const PERSONAL_INFO = {
+  name: 'Alfredo Wiesner',
+  email: 'alrod.dev@gmail.com',
+  github: 'https://github.com/alrod-dev',
+  linkedin: 'https://linkedin.com/in/alrod-dev',
+  bio: '8+ years building production systems — from enterprise Vue migrations to AI-powered platforms',
+  taglines: ['AI Engineer', 'Front-End Architect', 'Full-Stack Developer'],
+}
+
+export const PROJECTS = [
+  {
+    id: 1,
+    title: 'ai-nexus-chat',
+    subtitle: 'Multi-Model AI Chat Platform',
+    description: 'Intelligent chat platform supporting multiple AI models with real-time streaming, conversation memory, and markdown rendering.',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'OpenAI', 'Anthropic'],
+    github: 'https://github.com/alrod-dev/ai-nexus-chat',
+    demo: 'https://ai-nexus-chat.vercel.app',
+    icon: '🤖',
+    color: 'from-cyan-500 to-blue-500',
+  },
+  {
+    id: 2,
+    title: 'rag-engine',
+    subtitle: 'Document Intelligence RAG System',
+    description: 'Advanced Retrieval-Augmented Generation system for document analysis with semantic search and intelligent answering.',
+    technologies: ['Python', 'FastAPI', 'LangChain', 'Pinecone', 'Next.js'],
+    github: 'https://github.com/alrod-dev/rag-engine',
+    demo: 'https://rag-engine.vercel.app',
+    icon: '📚',
+    color: 'from-blue-500 to-cyan-500',
+  },
+  {
+    id: 3,
+    title: 'auto-reviewer',
+    subtitle: 'AI-Powered Code Review Agent',
+    description: 'GitHub-integrated AI code reviewer that provides intelligent feedback on pull requests with Claude API.',
+    technologies: ['Node.js', 'TypeScript', 'Claude API', 'GitHub Webhooks'],
+    github: 'https://github.com/alrod-dev/auto-reviewer',
+    demo: 'https://github.com/alrod-dev/auto-reviewer',
+    icon: '🔍',
+    color: 'from-emerald-500 to-cyan-500',
+  },
+  {
+    id: 4,
+    title: 'ml-pipeline-studio',
+    subtitle: 'Visual ML Pipeline Builder',
+    description: 'No-code visual editor for creating and training machine learning pipelines with drag-and-drop interface.',
+    technologies: ['Python', 'FastAPI', 'React', 'scikit-learn'],
+    github: 'https://github.com/alrod-dev/ml-pipeline-studio',
+    demo: 'https://ml-pipeline-studio.vercel.app',
+    icon: '⚙️',
+    color: 'from-purple-500 to-cyan-500',
+  },
+  {
+    id: 5,
+    title: 'vue-forge',
+    subtitle: 'Enterprise Vue 3 Component Library',
+    description: 'Production-ready Vue 3 component library with 50+ components, comprehensive documentation, and Storybook integration.',
+    technologies: ['Vue 3', 'TypeScript', 'VitePress', 'Tailwind CSS'],
+    github: 'https://github.com/alrod-dev/vue-forge',
+    demo: 'https://vue-forge.vercel.app',
+    icon: '🎨',
+    color: 'from-green-500 to-cyan-500',
+  },
+  {
+    id: 6,
+    title: 'react-realtime-dashboard',
+    subtitle: 'Real-Time Analytics Dashboard',
+    description: 'WebSocket-powered analytics dashboard with live data streaming, D3 visualizations, and state management with Zustand.',
+    technologies: ['React', 'Next.js', 'WebSocket', 'D3', 'Zustand'],
+    github: 'https://github.com/alrod-dev/react-realtime-dashboard',
+    demo: 'https://react-realtime-dashboard.vercel.app',
+    icon: '📊',
+    color: 'from-orange-500 to-cyan-500',
+  },
+  {
+    id: 7,
+    title: 'next-commerce',
+    subtitle: 'Full-Stack E-Commerce Platform',
+    description: 'Complete e-commerce solution with Stripe payments, product management, shopping cart, and order tracking.',
+    technologies: ['Next.js', 'Stripe', 'Prisma', 'PostgreSQL'],
+    github: 'https://github.com/alrod-dev/next-commerce',
+    demo: 'https://next-commerce.vercel.app',
+    icon: '🛒',
+    color: 'from-red-500 to-cyan-500',
+  },
+  {
+    id: 8,
+    title: 'aem-react-toolkit',
+    subtitle: 'Adobe AEM + React Integration Toolkit',
+    description: 'Toolkit for seamless integration of React components with Adobe AEM, including SPA SDK utilities and Storybook support.',
+    technologies: ['React', 'AEM SPA SDK', 'Storybook'],
+    github: 'https://github.com/alrod-dev/aem-react-toolkit',
+    demo: 'https://aem-react-toolkit.vercel.app',
+    icon: '🏗️',
+    color: 'from-indigo-500 to-cyan-500',
+  },
+]
+
+export const EXPERIENCE = [
+  {
+    id: 1,
+    title: 'Senior Front-End Engineer',
+    company: '1-800 Contacts',
+    period: '2021 - 2024',
+    description:
+      'Led the migration of a legacy jQuery codebase to Vue.js, serving 2M+ users. Built a comprehensive component library, improved performance by 40% through code splitting and lazy loading, and mentored junior developers on modern web practices.',
+    highlights: [
+      'Led Vue.js migration for legacy codebase',
+      'Built reusable component library',
+      'Improved performance by 40%',
+      'Served 2M+ users',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Full-Stack Developer',
+    company: 'Gorilla Group (now Perficient)',
+    period: '2018 - 2021',
+    description:
+      'Developed React and Adobe AEM solutions for Fortune 500 clients. Created reusable component systems, integrated headless CMS, and established best practices for enterprise frontend architecture.',
+    highlights: [
+      'Built React + AEM enterprise solutions',
+      'Created reusable component systems',
+      'Worked with Fortune 500 clients',
+      'Established architectural best practices',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Front-End Developer',
+    company: 'Various Agencies',
+    period: '2016 - 2018',
+    description:
+      'Developed responsive web applications using React, Angular, and vanilla JavaScript. Focused on performance optimization and accessibility standards.',
+    highlights: [
+      'Built responsive web applications',
+      'Worked with React, Angular, and vanilla JS',
+      'Focused on performance and accessibility',
+      'Multiple agency projects',
+    ],
+  },
+]
+
+export const SKILLS = {
+  'AI & ML': [
+    'Python',
+    'LangChain',
+    'OpenAI API',
+    'Anthropic Claude',
+    'RAG Systems',
+    'Vector Databases',
+    'scikit-learn',
+    'TensorFlow',
+  ],
+  'Front-End': [
+    'React',
+    'Vue.js',
+    'Next.js',
+    'TypeScript',
+    'Tailwind CSS',
+    'GSAP',
+    'Framer Motion',
+    'Three.js',
+  ],
+  'Back-End': [
+    'Node.js',
+    'FastAPI',
+    'Express',
+    'Go',
+    'PostgreSQL',
+    'Prisma',
+    'Redis',
+  ],
+  'DevOps & Tools': [
+    'Docker',
+    'AWS',
+    'Vercel',
+    'GitHub Actions',
+    'CI/CD',
+    'Storybook',
+  ],
+}
+
+export const STATS = [
+  { label: 'Years Experience', value: '8+' },
+  { label: 'Projects Completed', value: '50+' },
+  { label: 'Industries Served', value: '3' },
+  { label: 'Open Source Contributions', value: '20+' },
+]
+
+export const ABOUT_CARDS = [
+  {
+    id: 1,
+    title: 'I build intelligent systems that bridge AI and beautiful interfaces',
+    description:
+      'With expertise spanning machine learning, full-stack development, and design systems, I create solutions that are both powerful and intuitive.',
+    isLarge: true,
+    type: 'intro',
+  },
+  {
+    id: 2,
+    title: 'Available for remote work worldwide',
+    description: 'Based in the Pacific timezone, ready to collaborate with teams across the globe.',
+    type: 'globe',
+  },
+  {
+    id: 3,
+    title: 'Tech Stack',
+    description: 'Specialized in modern web technologies and AI frameworks',
+    type: 'tech-stack',
+  },
+  {
+    id: 4,
+    title: 'By The Numbers',
+    description: '8+ Years | 50+ Projects | 3 Industries',
+    type: 'stats',
+  },
+  {
+    id: 5,
+    title: 'Currently Building',
+    description: 'Exploring multi-agent AI orchestration and advanced RAG pipelines for enterprise applications.',
+    type: 'currently-building',
+  },
+  {
+    id: 6,
+    title: "Let's build something together",
+    description: 'Have an idea? Reach out and let me know how I can help bring it to life.',
+    type: 'cta',
+  },
+]
