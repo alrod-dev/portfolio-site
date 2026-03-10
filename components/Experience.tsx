@@ -1,21 +1,22 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 import { EXPERIENCE } from '@/data'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Experience() {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation()
 
   return (
     <section id="experience" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 md:mb-24"
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Experience
@@ -23,31 +24,29 @@ export function Experience() {
           <p className="text-gray-600 dark:text-gray-400 text-lg">
             My professional journey building products and teams
           </p>
-        </motion.div>
+        </div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div ref={contentRef} className={`relative transition-all duration-700 ${
+          contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+        }`}>
           {/* Vertical line */}
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500 opacity-30 rounded-full" />
 
           {/* Experience Items */}
           <div className="space-y-12">
             {EXPERIENCE.map((exp, index) => (
-              <motion.div
+              <div
                 key={exp.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
                 className="experience-item"
+                style={{
+                  transitionDelay: `${index * 100}ms`,
+                }}
               >
                 <div className={`flex gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Timeline dot */}
                   <div className="flex-shrink-0 flex items-start pt-2">
-                    <motion.div
-                      whileHover={{ scale: 1.2 }}
-                      className="w-4 h-4 rounded-full bg-cyan-500 shadow-glow-cyan ring-4 ring-navy-900 dark:ring-dark-base"
-                    />
+                    <div className="w-4 h-4 rounded-full bg-cyan-500 shadow-glow-cyan ring-4 ring-navy-900 dark:ring-dark-base hover:scale-125 transition-transform" />
                   </div>
 
                   {/* Content */}
@@ -89,7 +88,7 @@ export function Experience() {
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block md:w-1/2" />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

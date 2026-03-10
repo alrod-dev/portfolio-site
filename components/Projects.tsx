@@ -1,41 +1,22 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Github, ExternalLink } from 'lucide-react'
 import { PROJECTS } from '@/data'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function Projects() {
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  }
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation()
 
   return (
     <section id="projects" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 md:mb-24"
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured Projects
@@ -43,20 +24,18 @@ export function Projects() {
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
             A selection of recent projects showcasing my expertise across AI, full-stack development, and modern web technologies
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        <div
+          ref={gridRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
+            gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
         >
           {PROJECTS.map((project) => (
-            <motion.div
+            <div
               key={project.id}
-              variants={itemVariants}
               className="group"
             >
               <div className="relative bg-light-card dark:bg-dark-card rounded-xl overflow-hidden border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 h-full flex flex-col hover:shadow-card-hover">
@@ -100,34 +79,30 @@ export function Projects() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 rounded-lg transition-all border border-cyan-500/30 hover:border-cyan-500/50"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 rounded-lg transition-all border border-cyan-500/30 hover:border-cyan-500/50 hover:scale-105"
                     >
                       <Github className="w-4 h-4" />
                       <span className="text-sm font-medium">Code</span>
-                    </motion.a>
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    </a>
+                    <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 rounded-lg transition-all border border-cyan-500/30 hover:border-cyan-500/50"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 rounded-lg transition-all border border-cyan-500/30 hover:border-cyan-500/50 hover:scale-105"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span className="text-sm font-medium">Demo</span>
-                    </motion.a>
+                    </a>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

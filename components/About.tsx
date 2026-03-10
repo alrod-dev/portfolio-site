@@ -1,41 +1,22 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Code2, Globe, Zap } from 'lucide-react'
 import { PERSONAL_INFO, STATS } from '@/data'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export function About() {
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  }
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation()
 
   return (
     <section id="about" className="relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 md:mb-24"
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About Me
@@ -43,22 +24,18 @@ export function About() {
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
             A full-stack engineer with a passion for building intelligent systems
           </p>
-        </motion.div>
+        </div>
 
         {/* Bento Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-max"
+        <div
+          ref={gridRef}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-max transition-all duration-700 ${
+            gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
         >
           {/* Large Intro Card */}
-          <motion.div
-            variants={itemVariants}
-            className=" md:col-span-2 md:row-span-2"
-          >
-            <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 md:p-10 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
+          <div className="md:col-span-2 md:row-span-2">
+            <div className="relative bg-light-card dark:bg-dark-card rounded-2xl p-8 md:p-10 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group overflow-hidden">
               <div className="flex items-start gap-6 h-full">
                 <div className="flex-1">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-cyan-500 transition-colors">
@@ -74,13 +51,10 @@ export function About() {
                 <Code2 className="w-32 h-32 absolute -bottom-10 -right-10 text-cyan-500" />
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Globe Card */}
-          <motion.div
-            variants={itemVariants}
-            className=""
-          >
+          <div>
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover flex flex-col items-center justify-center gap-4 group">
               <Globe className="w-16 h-16 text-cyan-500 group-hover:scale-110 group-hover:text-cyan-400 transition-all duration-300" />
               <div className="text-center">
@@ -90,13 +64,10 @@ export function About() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Tech Stack Card */}
-          <motion.div
-            variants={itemVariants}
-            className=""
-          >
+          <div>
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
               <h4 className="font-semibold mb-4 flex items-center gap-2 group-hover:text-cyan-500 transition-colors">
                 <Zap className="w-5 h-5" />
@@ -109,13 +80,10 @@ export function About() {
                 <li className="text-gray-600 dark:text-gray-400">AI & ML frameworks</li>
               </ul>
             </div>
-          </motion.div>
+          </div>
 
           {/* Stats Card */}
-          <motion.div
-            variants={itemVariants}
-            className=" md:col-span-2"
-          >
+          <div className="md:col-span-2">
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover">
               <h4 className="font-semibold mb-6">By The Numbers</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -131,13 +99,10 @@ export function About() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Currently Building */}
-          <motion.div
-            variants={itemVariants}
-            className=""
-          >
+          <div>
             <div className="bg-light-card dark:bg-dark-card rounded-2xl p-8 h-full border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
               <h4 className="font-semibold mb-3 group-hover:text-cyan-500 transition-colors">
                 Currently Building
@@ -146,25 +111,21 @@ export function About() {
                 Multi-agent AI orchestration and advanced RAG pipelines for enterprise applications
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* CTA Card */}
-          <motion.div
-            variants={itemVariants}
-            className=""
-          >
-            <motion.a
+          <div>
+            <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gradient-cyan-blue rounded-2xl p-8 h-full border border-cyan-500/50 hover:border-cyan-400 transition-all duration-300 hover:shadow-glow-cyan flex flex-col items-center justify-center gap-4 text-white text-center group cursor-pointer"
+              className="block bg-gradient-cyan-blue rounded-2xl p-8 h-full border border-cyan-500/50 hover:border-cyan-400 transition-all duration-300 hover:shadow-glow-cyan hover:scale-[1.02] flex flex-col items-center justify-center gap-4 text-white text-center group cursor-pointer"
             >
-              <h4 className="font-semibold text-lg">Let's build something together</h4>
+              <h4 className="font-semibold text-lg">Let&apos;s build something together</h4>
               <p className="text-sm opacity-90">
-                Have a project in mind? Let's talk about it
+                Have a project in mind? Let&apos;s talk about it
               </p>
-            </motion.a>
-          </motion.div>
-        </motion.div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )
