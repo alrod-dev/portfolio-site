@@ -48,7 +48,7 @@ export function Navbar() {
               href="#"
               className="text-xl md:text-2xl font-bold bg-gradient-text"
             >
-              AR
+              AW
             </a>
           </motion.div>
 

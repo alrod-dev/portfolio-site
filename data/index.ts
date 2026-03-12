@@ -2,7 +2,6 @@ export const PERSONAL_INFO = {
   name: 'Alfredo Wiesner',
   email: 'alrod.dev@gmail.com',
   github: 'https://github.com/alrod-dev',
-  linkedin: 'https://linkedin.com/in/alrod-dev',
   bio: 'AI Engineer & Senior Full-Stack Developer with 8+ years building production systems — from RAG architectures and LLM-powered applications to enterprise platforms serving millions of users',
   taglines: ['AI Engineer', 'Senior Full-Stack Engineer', 'LLM & RAG Architect'],
 }

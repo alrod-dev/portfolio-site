@@ -57,6 +57,24 @@ body.light {
   @apply bg-cyan-600 dark:bg-cyan-400;
 }
 
+/* Terminal scrollbar */
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
 /* Smooth transitions */
 button,
 a,
@@ -135,4 +153,45 @@ textarea:focus-visible {
 .animated-gradient {
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
+}
+
+/* Confetti animation for Easter egg */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-particle {
+  will-change: transform;
+}
+
+/* Slow spin for globe icon */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg) scale(1.1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+.group:hover .group-hover\:animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: inherit;
 }

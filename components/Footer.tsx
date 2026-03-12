@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Mail, Heart } from 'lucide-react'
 import { PERSONAL_INFO } from '@/data'
 
 export function Footer() {
@@ -65,14 +65,6 @@ export function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 rounded-lg hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 hover:scale-110 transition-all"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
                 href={`mailto:${PERSONAL_INFO.email}`}
                 className="p-3 bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 rounded-lg hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 hover:scale-110 transition-all"
               >
@@ -85,11 +77,10 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-200 dark:border-cyan-500/20 pt-8">
           <div className="text-center text-sm text-gray-600 dark:text-gray-400">
-            <p>
-              &copy; {currentYear} {PERSONAL_INFO.name}. Built with Next.js, Three.js & Tailwind CSS.
-            </p>
-            <p className="mt-2 text-xs opacity-75">
-              All rights reserved.
+            <p className="flex items-center justify-center gap-1">
+              &copy; {currentYear} {PERSONAL_INFO.name}. Built with
+              <Heart className="w-3 h-3 text-red-500 inline-block" />
+              Next.js, Three.js & Tailwind CSS.
             </p>
           </div>
         </div>
