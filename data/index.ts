@@ -3,8 +3,8 @@ export const PERSONAL_INFO = {
   email: 'alrod.dev@gmail.com',
   github: 'https://github.com/alrod-dev',
   linkedin: 'https://linkedin.com/in/alrod-dev',
-  bio: '8+ years building production systems — from enterprise Vue migrations to AI-powered platforms',
-  taglines: ['AI Engineer', 'Front-End Architect', 'Full-Stack Developer'],
+  bio: 'AI Engineer & Senior Full-Stack Developer with 8+ years building production systems — from RAG architectures and LLM-powered applications to enterprise platforms serving millions of users',
+  taglines: ['AI Engineer', 'Senior Full-Stack Engineer', 'LLM & RAG Architect'],
 }
 
 export const PROJECTS = [
@@ -101,101 +101,107 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     id: 1,
-    title: 'Senior Front-End Engineer',
-    company: '1-800 Contacts',
-    period: '2021 - 2024',
+    title: 'AI Engineering & Intelligent Systems',
     description:
-      'Led the migration of a legacy jQuery codebase to Vue.js, serving 2M+ users. Built a comprehensive component library, improved performance by 40% through code splitting and lazy loading, and mentored junior developers on modern web practices.',
+      'Architected and deployed AI-powered features integrating LLM APIs and intelligent automation into production web applications serving millions of users. Built RAG-based tools using vector embeddings and semantic search to surface relevant data, reducing response times significantly.',
     highlights: [
-      'Led Vue.js migration for legacy codebase',
-      'Built reusable component library',
-      'Improved performance by 40%',
-      'Served 2M+ users',
+      'LLM integration (OpenAI, Anthropic Claude, open-source models)',
+      'RAG architectures with LangChain, Pinecone, and ChromaDB',
+      'AI agent workflows and prompt engineering',
+      'Multi-model chat systems with streaming and memory',
     ],
   },
   {
     id: 2,
-    title: 'Full-Stack Developer',
-    company: 'Gorilla Group (now Perficient)',
-    period: '2018 - 2021',
+    title: 'Enterprise Front-End Architecture',
     description:
-      'Developed React and Adobe AEM solutions for Fortune 500 clients. Created reusable component systems, integrated headless CMS, and established best practices for enterprise frontend architecture.',
+      'Led framework migrations and built component libraries for applications serving 10M+ annual visitors. Spearheaded Vue 2 to Vue 3 and Tailwind CSS migrations with zero downtime, improving bundle size by 35% and developer velocity across engineering teams.',
     highlights: [
-      'Built React + AEM enterprise solutions',
-      'Created reusable component systems',
-      'Worked with Fortune 500 clients',
-      'Established architectural best practices',
+      'Led zero-downtime framework migrations at scale',
+      'Built reusable component libraries used across product lines',
+      'TypeScript adoption across entire ecosystems',
+      'Performance optimization achieving 40%+ improvements',
     ],
   },
   {
     id: 3,
-    title: 'Front-End Developer',
-    company: 'Various Agencies',
-    period: '2016 - 2018',
+    title: 'Full-Stack & Enterprise Solutions',
     description:
-      'Developed responsive web applications using React, Angular, and vanilla JavaScript. Focused on performance optimization and accessibility standards.',
+      'Delivered React and Adobe AEM solutions for Fortune 500 clients including enterprise brands. Integrated headless CMS, built GraphQL data layers, and containerized development environments with Docker, cutting deployment times by 60%.',
     highlights: [
-      'Built responsive web applications',
-      'Worked with React, Angular, and vanilla JS',
-      'Focused on performance and accessibility',
-      'Multiple agency projects',
+      'React + AEM SPA architecture for enterprise clients',
+      'RESTful APIs and GraphQL data layer optimization',
+      'Docker containerization and CI/CD pipeline automation',
+      'A/B testing and analytics-driven optimization',
     ],
   },
 ]
 
+export const PARTNERS = [
+  { name: 'Sherwin-Williams', industry: 'Fortune 500' },
+  { name: 'US Marines', industry: 'Government' },
+  { name: 'Perficient', industry: 'Digital Consultancy' },
+  { name: 'Adobe', industry: 'Enterprise Software' },
+]
+
 export const SKILLS = {
   'AI & ML': [
-    'Python',
+    'LLMs (OpenAI, Claude, Open-Source)',
+    'RAG Architectures',
     'LangChain',
-    'OpenAI API',
-    'Anthropic Claude',
-    'RAG Systems',
-    'Vector Databases',
+    'Vector Databases (Pinecone, ChromaDB)',
+    'Prompt Engineering',
+    'AI Agent Workflows',
+    'Embeddings & Semantic Search',
     'scikit-learn',
-    'TensorFlow',
+    'Python',
   ],
   'Front-End': [
     'React',
-    'Vue.js',
+    'Vue.js (2 & 3)',
     'Next.js',
+    'Nuxt.js',
     'TypeScript',
     'Tailwind CSS',
-    'GSAP',
     'Framer Motion',
-    'Three.js',
+    'SCSS/SASS',
   ],
   'Back-End': [
-    'Node.js',
+    'Node.js (Express)',
     'FastAPI',
-    'Express',
+    'Python',
     'Go',
+    'PHP (Laravel)',
     'PostgreSQL',
-    'Prisma',
+    'MongoDB',
     'Redis',
+    'GraphQL',
   ],
   'DevOps & Tools': [
     'Docker',
     'AWS',
     'Vercel',
-    'GitHub Actions',
-    'CI/CD',
+    'CI/CD Pipelines',
+    'Git',
+    'Adobe AEM',
     'Storybook',
+    'Cypress / Jest',
   ],
 }
 
 export const STATS = [
   { label: 'Years Experience', value: '8+' },
-  { label: 'Projects Completed', value: '50+' },
-  { label: 'Industries Served', value: '3' },
-  { label: 'Open Source Contributions', value: '20+' },
+  { label: 'Projects Delivered', value: '50+' },
+  { label: 'Enterprise Clients', value: 'Fortune 500' },
+  { label: 'Users Impacted', value: '10M+' },
 ]
 
 export const ABOUT_CARDS = [
   {
     id: 1,
-    title: 'I build intelligent systems that bridge AI and beautiful interfaces',
+    title: 'I engineer AI-powered systems and scalable full-stack platforms',
     description:
-      'With expertise spanning machine learning, full-stack development, and design systems, I create solutions that are both powerful and intuitive.',
+      'From RAG architectures and LLM integrations to enterprise applications serving millions — I build solutions that are intelligent, performant, and production-ready.',
     isLarge: true,
     type: 'intro',
   },
@@ -214,7 +220,7 @@ export const ABOUT_CARDS = [
   {
     id: 4,
     title: 'By The Numbers',
-    description: '8+ Years | 50+ Projects | 3 Industries',
+    description: '8+ Years | 50+ Projects | Fortune 500 Clients | 10M+ Users',
     type: 'stats',
   },
   {

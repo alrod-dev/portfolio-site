@@ -1,7 +1,7 @@
 'use client'
 
 import { CheckCircle2 } from 'lucide-react'
-import { EXPERIENCE } from '@/data'
+import { EXPERIENCE, PARTNERS } from '@/data'
 
 export function Experience() {
   return (
@@ -13,11 +13,11 @@ export function Experience() {
             Experience
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
-            My professional journey building products and teams
+            8+ years delivering AI-powered and enterprise-grade solutions
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Expertise Areas */}
         <div className="relative">
           {/* Vertical line */}
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500 opacity-30 rounded-full" />
@@ -38,20 +38,9 @@ export function Experience() {
                   {/* Content */}
                   <div className="flex-1 md:w-1/2">
                     <div className="bg-light-card dark:bg-dark-card rounded-xl p-6 md:p-8 border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover group">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div>
-                          <h3 className="text-xl font-bold group-hover:text-cyan-500 transition-colors">
-                            {exp.title}
-                          </h3>
-                          <p className="text-cyan-600 dark:text-cyan-400 font-semibold text-sm">
-                            {exp.company}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-4">
-                        {exp.period}
-                      </p>
+                      <h3 className="text-xl font-bold group-hover:text-cyan-500 transition-colors mb-4">
+                        {exp.title}
+                      </h3>
 
                       <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                         {exp.description}
@@ -74,6 +63,31 @@ export function Experience() {
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block md:w-1/2" />
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Partners & Clients */}
+        <div className="mt-20 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-3">
+            Companies I&apos;ve Partnered With
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-10">
+            Trusted by enterprise organizations to deliver production-grade solutions
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {PARTNERS.map((partner) => (
+              <div
+                key={partner.name}
+                className="bg-light-card dark:bg-dark-card rounded-xl px-6 py-4 border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover"
+              >
+                <p className="font-semibold text-gray-800 dark:text-gray-200">
+                  {partner.name}
+                </p>
+                <p className="text-xs text-cyan-600 dark:text-cyan-400 mt-1">
+                  {partner.industry}
+                </p>
               </div>
             ))}
           </div>
