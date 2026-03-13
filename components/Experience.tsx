@@ -85,11 +85,11 @@ export function Experience() {
                       style={{ backgroundColor: partner.color }}
                     />
                     {/* Logo */}
-                    <div className="w-full flex items-center justify-center h-12 md:h-14 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-full flex items-center justify-center h-10 md:h-12 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                       <img
                         src={partner.logo}
                         alt={partner.name}
-                        className="max-h-full max-w-full object-contain dark:brightness-0 dark:invert"
+                        className="h-8 md:h-10 w-auto object-contain dark:brightness-0 dark:invert"
                         loading="lazy"
                       />
                     </div>
