@@ -70,11 +70,11 @@ export function Experience() {
             <p className="text-gray-600 dark:text-gray-400 mb-12">
               Trusted by enterprise teams to deliver production-grade solutions
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6 max-w-3xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-5 md:gap-6 max-w-3xl mx-auto">
               {PARTNERS.map((partner, i) => (
                 <ScrollReveal key={partner.name} delay={0.2 + i * 0.08} direction="up">
                   <div
-                    className="group relative bg-light-card dark:bg-dark-card rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-opacity-60 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center justify-center gap-3 min-h-[140px] overflow-hidden"
+                    className="group relative bg-light-card dark:bg-dark-card rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-opacity-60 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center justify-center gap-3 min-h-[140px] w-[160px] md:w-[200px] overflow-hidden"
                     style={{
                       ['--partner-color' as string]: partner.color,
                     }}
@@ -85,11 +85,11 @@ export function Experience() {
                       style={{ backgroundColor: partner.color }}
                     />
                     {/* Logo */}
-                    <div className="w-full flex items-center justify-center h-12 md:h-14 opacity-80 group-hover:opacity-100 transition-opacity duration-300 dark:brightness-110 dark:contrast-110">
+                    <div className="w-full flex items-center justify-center h-12 md:h-14 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                       <img
                         src={partner.logo}
                         alt={partner.name}
-                        className="max-h-full max-w-full object-contain"
+                        className="max-h-full max-w-full object-contain dark:brightness-0 dark:invert"
                         loading="lazy"
                       />
                     </div>

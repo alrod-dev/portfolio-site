@@ -138,11 +138,10 @@ export const EXPERIENCE = [
 
 export const PARTNERS = [
   { name: 'NVIDIA', industry: 'AI & GPU Computing', logo: '/logos/nvidia.svg', color: '#76B900' },
-  { name: 'Adobe', industry: 'Enterprise Software', logo: '/logos/adobe.svg', color: '#FF0000' },
-  { name: 'T-Mobile', industry: 'Telecommunications', logo: '/logos/t-mobile.svg', color: '#E20074' },
-  { name: 'Sherwin-Williams', industry: 'Fortune 500', logo: '/logos/sherwin-williams.svg', color: '#0067A5' },
-  { name: 'US Marines', industry: 'Government', logo: '/logos/usmarines.svg', color: '#C8102E' },
-  { name: 'Perficient', industry: 'Digital Consultancy', logo: '/logos/perficient.svg', color: '#00A3E0' },
+  { name: 'Adobe', industry: 'Enterprise Software', logo: '/logos/adobe_logo_header.svg', color: '#FF0000' },
+  { name: 'T-Mobile', industry: 'Telecommunications', logo: '/logos/tmo-logo-v4.svg', color: '#E20074' },
+  { name: 'Sherwin-Williams', industry: 'Fortune 500', logo: '/logos/sw-logo.png', color: '#0067A5' },
+  { name: 'US Marines', industry: 'Government', logo: '/logos/marines-horizontallogo.svg', color: '#C8102E' },
 ]
 
 export const SKILLS = {

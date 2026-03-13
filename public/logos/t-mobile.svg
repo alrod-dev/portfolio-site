@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
-  <rect width="200" height="60" fill="none"/>
-  <rect x="20" y="8" width="30" height="8" rx="1" fill="#E20074"/>
-  <rect x="30" y="8" width="10" height="32" rx="1" fill="#E20074"/>
-  <circle cx="35" cy="46" r="6" fill="#E20074"/>
-  <text x="125" y="40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="26" fill="#E20074">T-Mobile</text>
-</svg>
