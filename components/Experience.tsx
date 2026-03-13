@@ -63,19 +63,40 @@ export function Experience() {
 
         {/* Partners & Clients */}
         <ScrollReveal delay={0.2}>
-          <div className="mt-20 text-center">
+          <div className="mt-24 text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-3">
               Companies I&apos;ve Partnered With
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-10">
+            <p className="text-gray-600 dark:text-gray-400 mb-12">
               Trusted by enterprise teams to deliver production-grade solutions
             </p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6 max-w-3xl mx-auto">
               {PARTNERS.map((partner, i) => (
-                <ScrollReveal key={partner.name} delay={0.3 + i * 0.1} direction="up">
-                  <div className="bg-light-card dark:bg-dark-card rounded-xl px-6 py-4 border border-gray-200 dark:border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
-                    <p className="font-semibold text-gray-800 dark:text-gray-200">{partner.name}</p>
-                    <p className="text-xs text-cyan-600 dark:text-cyan-400 mt-1">{partner.industry}</p>
+                <ScrollReveal key={partner.name} delay={0.2 + i * 0.08} direction="up">
+                  <div
+                    className="group relative bg-light-card dark:bg-dark-card rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700/50 hover:border-opacity-60 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center justify-center gap-3 min-h-[140px] overflow-hidden"
+                    style={{
+                      ['--partner-color' as string]: partner.color,
+                    }}
+                  >
+                    {/* Subtle top accent line */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ backgroundColor: partner.color }}
+                    />
+                    {/* Logo */}
+                    <div className="w-full flex items-center justify-center h-12 md:h-14 opacity-80 group-hover:opacity-100 transition-opacity duration-300 dark:brightness-110 dark:contrast-110">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    {/* Industry label */}
+                    <p className="text-[11px] md:text-xs text-gray-500 dark:text-gray-500 font-medium tracking-wide uppercase">
+                      {partner.industry}
+                    </p>
                   </div>
                 </ScrollReveal>
               ))}
